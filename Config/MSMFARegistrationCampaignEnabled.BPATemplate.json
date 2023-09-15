@@ -1,0 +1,41 @@
+{
+  "name": "MS MFA Registration Campaign Enabled",
+  "style": "Tenant",
+  "Fields": [
+    {
+      "name": "MFANudgeState",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "MFA Registration Campaign Enabled",
+          "value": "MFANudgeState",
+          "formatter": "bool"
+        }
+      ],
+      "where": "$_.registrationEnforcement.authenticationMethodsRegistrationCampaign.state -eq 'Enabled'",
+      "StoreAs": "bool",
+      "API": "Graph",
+      "ExtractFields": [
+        "registrationEnforcement"
+      ],
+      "URL": "https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy"
+    },
+    {
+      "name": "SecureDefaultState",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "Secure Defaults State Enabled",
+          "value": "SecureDefaultState",
+          "formatter": "warnBool"
+        }
+      ],
+      "StoreAs": "bool",
+      "API": "Graph",
+      "ExtractFields": [
+        "IsEnabled"
+      ],
+      "URL": "https://graph.microsoft.com/beta/policies/identitySecurityDefaultsEnforcementPolicy"
+    }
+  ]
+}
