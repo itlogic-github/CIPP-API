@@ -1,6 +1,6 @@
 {
   "name": "MS MFA Registration Campaign Enabled",
-  "style": "Tenant",
+  "style": "Table",
   "Fields": [
     {
       "name": "MFANudgeState",
