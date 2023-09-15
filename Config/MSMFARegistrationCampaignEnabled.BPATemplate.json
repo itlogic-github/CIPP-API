@@ -9,7 +9,7 @@
         {
           "name": "MFA Registration Campaign Enabled",
           "value": "MFANudgeState",
-          "formatter": "bool"
+          "formatter": "warnBool"
         }
       ],
       "where": "$_.registrationEnforcement.authenticationMethodsRegistrationCampaign.state -eq 'Enabled'",
