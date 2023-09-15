@@ -1,6 +1,6 @@
 {
   "name": "MS MFA Registration Campaign Enabled",
-  "style": "Table",
+  "style": "Tenant",
   "Fields": [
     {
       "name": "MFANudgeState",
@@ -15,6 +15,8 @@
       "where": "$_.registrationEnforcement.authenticationMethodsRegistrationCampaign.state -eq 'Enabled'",
       "StoreAs": "bool",
       "API": "Graph",
+      "ExtractFields": [
+        "registrationEnforcement"
       ],
       "URL": "https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy"
     },
